@@ -1,0 +1,4 @@
+data
+wandb
+vqvae-mnist
+lightning_logs
