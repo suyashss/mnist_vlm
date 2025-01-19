@@ -36,7 +36,7 @@ test_dataset = datasets.MNIST(root="./data", train=False, transform=transform, d
 
 train_loader = DataLoader(train_dataset, batch_size=1, shuffle=True)  # DataLoader for batching and shuffling
 val_loader = DataLoader(val_dataset, batch_size=1, shuffle=False)  # DataLoader for validation data
-test_loader = DataLoader(test_dataset, batch_size=1, shuffle=False)  # DataLoader for validation data
+test_loader = DataLoader(test_dataset, batch_size=1, shuffle=False)  # DataLoader for test data
 
 # img2text function that creates a text description from image token indices
 def img2text(representation):
