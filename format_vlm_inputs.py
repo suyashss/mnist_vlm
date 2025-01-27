@@ -3,6 +3,10 @@ from torch.utils.data import DataLoader, Subset
 from torchvision import datasets, transforms
 import random
 from vqvae_model import VQVAE
+import os
+
+outdir = "nanoGPT/data/mnist_vlm"
+os.mkdir(outdir)
 
 # Step 1: Load the model
 # Hyperparameters
@@ -68,6 +72,6 @@ def save_dataset_txt(data_loader,outfile,maxlen=64):
             # Print or store the generated sentence
             ofile.write(sentence+"\n")
 
-save_dataset_txt(train_loader,"train.txt",32)
-save_dataset_txt(val_loader,"valid.txt",32)
-save_dataset_txt(test_loader,"test.txt",32)
+save_dataset_txt(train_loader,os.path.join(outdir,"train.txt"),32)
+save_dataset_txt(val_loader,os.path.join(outdir,"valid.txt"),32)
+save_dataset_txt(test_loader,os.path.join(outdir,"test.txt"),32)
